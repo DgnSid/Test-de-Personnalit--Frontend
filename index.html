@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYOTA Personality Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Test de Personnalité NYOTA</h1>
+            <p class="subtitle">Découvrez votre profil en 8 dimensions à travers 72 questions</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-text">
+                Question <span id="currentQuestion">1</span> sur <span id="totalQuestions">72</span>
+            </div>
+        </div>
+
+        <main>
+            <section id="welcomeScreen" class="screen active">
+                <div class="welcome-card">
+                    <h2>Bienvenue au test NYOTA</h2>
+                    <p>Ce test évalue 8 dimensions de votre personnalité :</p>
+                    <ul class="dimensions-list">
+                        <li>🎯 Ouverture & Curiosité</li>
+                        <li>⚖️ Discipline & Fiabilité</li>
+                        <li>🌟 Influence & Présence</li>
+                        <li>🤝 Coopération</li>
+                        <li>🛡️ Résilience & Stress</li>
+                        <li>🚀 Drive & Motivation</li>
+                        <li>⚡ Style d'action</li>
+                        <li>🎯 Alignement stratégique</li>
+                    </ul>
+                    <p><strong>Durée estimée : 15-20 minutes</strong></p>
+                    <button id="startTest" class="btn-primary">Commencer le test</button>
+                </div>
+            </section>
+
+            <section id="testScreen" class="screen">
+                <div class="question-card">
+                    <div class="question-header">
+                        <h3 id="questionText"></h3>
+                        <div class="bloc-indicator" id="blocIndicator"></div>
+                    </div>
+                    
+                    <div class="options-container">
+                        <div class="scale-options">
+                            <div class="option-item">
+                                <button class="scale-btn" data-value="1">1</button>
+                                <span class="option-label">Pas du tout<br>d'accord</span>
+                            </div>
+                            <div class="option-item">
+                                <button class="scale-btn" data-value="2">2</button>
+                                <span class="option-label">Plutôt pas<br>d'accord</span>
+                            </div>
+                            <div class="option-item">
+                                <button class="scale-btn" data-value="3">3</button>
+                                <span class="option-label">Neutre</span>
+                            </div>
+                            <div class="option-item">
+                                <button class="scale-btn" data-value="4">4</button>
+                                <span class="option-label">Plutôt<br>d'accord</span>
+                            </div>
+                            <div class="option-item">
+                                <button class="scale-btn" data-value="5">5</button>
+                                <span class="option-label">Tout à fait<br>d'accord</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button id="prevBtn" class="btn-secondary">Précédent</button>
+                        <button id="nextBtn" class="btn-primary">Suivant</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resultsScreen" class="screen">
+                <div class="results-container">
+                    <h2>Votre Profil NYOTA</h2>
+                    
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    
+                    <div class="scores-grid" id="scoresGrid"></div>
+                    
+                    <div class="action-buttons">
+                        <button id="downloadPdf" class="btn-primary">
+                            📥 Télécharger le résultat
+                        </button>
+                        <button id="restartTest" class="btn-secondary">
+                            🔄 Refaire le test
+                        </button>
+                    </div>
+                    
+                    <div class="results-explanation">
+                        <h3>📋 Interprétation des scores</h3>
+                        <p><strong>0-30 :</strong> Développement souhaitable</p>
+                        <p><strong>31-60 :</strong> Niveau acceptable</p>
+                        <p><strong>61-80 :</strong> Point fort</p>
+                        <p><strong>81-100 :</strong> Talent exceptionnel</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>NYOTA Personality Test v1.0 | © 2024</p>
+        </footer>
+    </div>
+
+    <script src="question.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
