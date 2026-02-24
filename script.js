@@ -1,5 +1,5 @@
 // Configuration
-const API_URL = ''; // À changer après déploiement
+const API_URL = 'https://test-de-personnalit-backend.onrender.com'; // À changer après déploiement
 let currentQuestion = 0;
 let responses = {};
 let radarChart = null;
@@ -527,3 +527,4 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
